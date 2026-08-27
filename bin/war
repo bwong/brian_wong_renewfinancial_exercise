@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative "../lib/war"
+
+num_players = (ARGV[0] || 2).to_i
+
+begin
+  hands = War::Deck.new.deal(num_players)
+rescue ArgumentError => e
+  warn "Error: #{e.message}"
+  exit 1
+end
+
+players = []
+hands.each_with_index do |hand, i|
+  players << War::Player.new("Player #{i + 1}", hand)
+end
+
+War::Game.new(players).play
