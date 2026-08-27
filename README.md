@@ -30,3 +30,4 @@ bundle exec rspec
 - Only 2 or 4 players are supported, per the rules.
 - When a player wins a round, the cards go to the bottom of their deck in the order they were played (the rules say "any order" is fine).
 - Games are capped at 100,000 rounds as a safety net against a theoretical infinite loop. In practice this should never be hit.
+- Tests were written by Claude Code
